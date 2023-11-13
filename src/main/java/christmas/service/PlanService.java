@@ -55,8 +55,8 @@ public class PlanService {
 
         //2. 각 메뉴별
         for (String inputOrder : seperatedInputOrders) {
-            checkCondition.checkMinOrderCount(orders);
             addOrder(inputOrder, orders);
+            checkCondition.checkMinOrderCount(orders);
         }
 
         return orders;
@@ -69,7 +69,7 @@ public class PlanService {
 
         Menu orderMenu = Menu.of(separatedOrder[0])
                 .orElseThrow(() ->
-                        new IllegalArgumentException("ERROR")
+                        new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.")
                 );
         int orderCount = Integer.parseInt(separatedOrder[1]);
 

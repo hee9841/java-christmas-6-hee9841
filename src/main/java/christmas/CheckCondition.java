@@ -31,16 +31,25 @@ public class CheckCondition {
 
     public void validateOrderFormat(String order) {
         try {
-            String[] separatedOrder = order.split("-");
-            if (separatedOrder.length != 2) {
+            if (!isValidOrderSeparatorFormat(order)) {
                 throw new IllegalArgumentException();
             }
+            String[] separatedOrder = order.split("-");
             if (!isValidOrderCount(Integer.parseInt(separatedOrder[1]))) {
                 throw new IllegalArgumentException();
             }
         } catch (NullPointerException | IllegalArgumentException e) {
             throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
         }
+    }
+
+    private boolean isValidOrderSeparatorFormat(String order) {
+        long separatorCount = order.chars().filter(c -> c == '-').count();
+        if (separatorCount != 1) {
+            return false;
+        }
+        String[] separatedOrder = order.split("-");
+        return separatedOrder.length == 2;
     }
 
 
