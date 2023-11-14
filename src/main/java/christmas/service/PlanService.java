@@ -15,15 +15,19 @@ public class PlanService {
     private final InputView inputView;
     private final OutputView outputView;
 
+    private final Customer customer;
+
 
     public PlanService(InputView inputView, OutputView outputView, CheckCondition checkCondition) {
         this.inputView = inputView;
         this.outputView = outputView;
         this.checkCondition = checkCondition;
+        this.customer = getCustomer();
     }
 
 
-    public Customer getCustomer() {
+    private Customer getCustomer() {
+        outputView.printStartMessage();
         while (true) {
             try {
                 LocalDate visitDate = generateDate(inputView.readDate());
@@ -77,6 +81,12 @@ public class PlanService {
         orders.put(orderMenu, orderCount);
 
     }
+
+    public void calculatePaymentBeforeDiscount() {
+        customer.calculateTotalPayment();
+    }
+
+
 
 
 }
