@@ -56,7 +56,8 @@ public class BenefitPolicy {
     private void getCristmasBenefit(LocalDate visitDate, EnumMap<EventType, BigDecimal> result,
                                     EventType eventType) {
         if (eventType.equals(EventType.CHRISTMAS_SALE)) {
-            LocalDate eventStartDate = LocalDate.parse(EventDateInfo.EVENT_START_DATE, DateTimeFormatter.ISO_DATE);
+            LocalDate eventStartDate = LocalDate.parse(EventDateInfo.EVENT_START_DATE,
+                    DateTimeFormatter.ISO_DATE);
             Period period = Period.between(eventStartDate, visitDate);
             result.put(eventType, eventType.getBenefitAmount(period.getDays()));
         }
