@@ -1,15 +1,17 @@
-package christmas;
+package christmas.constant;
 
 
 import java.util.FormatterClosedException;
 import java.util.IllegalFormatException;
 
 public enum Message {
-    ORDER_MESSAGE_FORMAT("%s %d개", true),
-    TEST("DDD",false);
+    COUNT_UNIT_FORMAT("%s %d개", true),
+    NOTHING("없음", false),
+    BENEFIT_DETAILS_FORMAT("%s: %s", true);
 
-    private String message;
-    private boolean isFormatString;
+
+    private final String message;
+    private final boolean isFormatString;
 
     Message(String message, boolean isFormatString) {
         this.message = message;

@@ -1,4 +1,4 @@
-package christmas.domain;
+package christmas.constant;
 
 
 import java.util.Arrays;
@@ -46,14 +46,16 @@ public enum MenuGroup {
                 .filter(menuGroup -> menuGroup.hashMenuCode(code))
                 .findAny()
                 .orElseThrow(() ->
-                    new NullPointerException("[ERROR] code가 해당하는 Menugroup이 없습니다.")
+                        new NullPointerException("[ERROR] code가 해당하는 Menugroup이 없습니다.")
                 );
     }
+
 
     public boolean hashMenuCode(String code) {
         return group.stream()
                 .anyMatch(menu -> menu.equals(code));
     }
+
 
     @Override
     public String toString() {
