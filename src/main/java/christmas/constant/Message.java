@@ -20,13 +20,12 @@ public enum Message {
 
     public String toFormattedString(Object... arg) {
         if (!this.isFormatString) {
-            throw new UnsupportedOperationException("Erro");
-            //객체가 해당 메서드를 지원하지 안흠
+            throw new UnsupportedOperationException("[ERROR] 해당 메서들르 지원하지 않습니다.");
         }
         try {
             return String.format(this.message, arg);
         } catch (IllegalFormatException | FormatterClosedException e) {
-            throw new IllegalArgumentException("포멧 문자의 수가 맞지않음?");
+            throw new IllegalArgumentException("[ERROR] 포멧 문자의 수가 맞지않습니다.");
         }
     }
 

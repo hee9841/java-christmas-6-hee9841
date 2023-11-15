@@ -37,7 +37,7 @@ public enum Menu {
 
     public BigDecimal calculatePriceEachMenu(Integer orderCount) {
         if (orderCount == null) {
-            throw new NullPointerException("");
+            throw new NullPointerException("[ERROR] orderCount가 존재하지 않습니다.");
         }
         return price.multiply(BigDecimal.valueOf(orderCount));
     }
