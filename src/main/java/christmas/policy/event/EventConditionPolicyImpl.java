@@ -1,14 +1,14 @@
-package christmas.policy;
+package christmas.policy.event;
 
 
-import christmas.annotaion.condition.DayOfWeeks;
-import christmas.annotaion.condition.MenuGroupCondition;
-import christmas.annotaion.condition.MinOrderPrice;
-import christmas.annotaion.condition.Period;
-import christmas.annotaion.condition.SpecialDays;
 import christmas.constant.EventType;
 import christmas.constant.Menu;
 import christmas.constant.MenuGroup;
+import christmas.policy.event.annotaion.DayOfWeeks;
+import christmas.policy.event.annotaion.MenuGroupCondition;
+import christmas.policy.event.annotaion.MinOrderPrice;
+import christmas.policy.event.annotaion.Period;
+import christmas.policy.event.annotaion.SpecialDays;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.time.DayOfWeek;

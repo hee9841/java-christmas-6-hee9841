@@ -1,4 +1,4 @@
-package christmas.annotaion.condition;
+package christmas.policy.event.annotaion;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface MinOrderPrice {
-    long price();
+public @interface Period {
+    String startDate();
+    String endDate();
 }

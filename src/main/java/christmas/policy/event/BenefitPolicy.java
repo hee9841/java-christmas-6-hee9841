@@ -1,4 +1,4 @@
-package christmas.policy;
+package christmas.policy.event;
 
 
 import christmas.constant.EventDateInfo;

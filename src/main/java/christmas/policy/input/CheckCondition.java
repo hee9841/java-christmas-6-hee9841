@@ -1,7 +1,7 @@
-package christmas;
+package christmas.policy.input;
 
 
-import christmas.domain.Menu;
+import christmas.constant.Menu;
 import java.util.EnumMap;
 import util.ValidatorUtil;
 
